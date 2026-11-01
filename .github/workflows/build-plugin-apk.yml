@@ -58,7 +58,7 @@ jobs:
       - name: Collect APK
         run: |
           mkdir -p dist
-          find MobileGL/android-plugin -type f -path '*/intermediates/apk/plugin/release/*.apk' -exec cp {} dist/ +
+          find MobileGL/android-plugin -type f -path '*/intermediates/apk/plugin/release/*.apk' -exec cp -t dist/ {} +
           echo 'Collected APK files:'
           ls -lah dist
           test -n "$(find dist -maxdepth 1 -type f -name '*.apk' -print -quit)"
